@@ -1,65 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>One Last Message ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Thank You From Silpa ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#ffecd2,#fcb69f);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#fff1eb,#ace0f9);
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
     text-align:center;
-    padding:50px;
+    padding:40px;
+}
+
+h1{
+    color:#444;
+    margin-bottom:30px;
 }
 
 button{
     background:#ff4d6d;
     color:white;
     border:none;
-    padding:15px 25px;
-    font-size:20px;
-    border-radius:25px;
+    padding:18px 40px;
+    font-size:22px;
+    border-radius:50px;
     cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
-#message{
+button:hover{
+    transform:scale(1.05);
+    background:#ff2e5f;
+}
+
+.card{
     display:none;
-    margin-top:30px;
-    font-size:24px;
+    margin-top:35px;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    animation:fadeIn 1.5s ease;
+}
+
+.message{
+    font-family:'Dancing Script',cursive;
+    font-size:32px;
     line-height:1.8;
     color:#333;
+}
+
+.signature{
+    margin-top:25px;
+    font-size:38px;
+    color:#ff4d6d;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:fixed;
+    color:#ff4d6d;
+    animation:float 6s linear infinite;
+    opacity:0.4;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100px);
+    }
 }
 </style>
 </head>
 
 <body>
 
-<h1>✨ One Last Click Before I Go ✨</h1>
+<div class="container">
 
-<button onclick="showMessage()">
-❤️ Click Here ❤️
-</button>
+    <h1>✨ One Last Click Before I Go ✨</h1>
 
-<div id="message">
-<p>
-Dear shitty shits, <br><br>
+    <button onclick="showMessage()">
+        ❤️ Click Here ❤️
+    </button>
 
-Thank you for being part of my journey. ❤️<br>
+    <div class="card" id="msg">
 
-I will miss the chaos we made and the laughter for silly things... ✨<br><br>
+        <div class="message">
 
-It was fucking bore here before you guys ,and thnak you for making me happy and laugh even the busy days . <br><br>
-Dont make urself lower to anyone ,and keep going and work hard and also send me money every month coz starting tomorrow I will be unnemployed. 🚀💐<br><br>
+            Dear Colleagues, 💐<br><br>
 
-Thank you for everything.i don't know to explain how special u r to me ..I loved and enjoyed the time while spending with u guys..i want to say more but I am lazy to type ...that's it then okay..wish me great days of unemployment..and I am not tired of any chaos u made ..if u got tired of me thats ur problem cutiess..I know u will miss me so badly and also I don't miss u guys that much... and one main request don't put the blame if any meter is not working or failing like "silpa tested that...silpa checked that..." these line not allowed ..you better should not say my name..and its better to forget me ..(but don't ) ..Hopefully we can meet at anywhere..if any spelling mistake or grammer mistake is there im not apologizing for that ..for u its eenoughhhh..❤️<br><br>
+            As I close this chapter of my journey, I want to thank each one of you for being a part of it. ❤️<br><br>
 
-With gratitude,<br>
-<b>yours lovely silpaaa🌹</b>
-</p>
+            The support, guidance, encouragement, laughter, teamwork, and friendships I found here have made every challenge easier and every success more meaningful. 🌟<br><br>
+
+            Schneider Electric has given me not only professional growth but also wonderful memories that I will carry with me wherever life takes me next. 🤝✨<br><br>
+
+            While I look forward to new opportunities ahead, a part of my heart will always cherish the moments, learnings, and connections built with all of you. 🌷<br><br>
+
+            Thank you for your kindness, trust, support, and for making this journey so memorable. 🙏❤️<br><br>
+
+            Wishing every one of you continued success, happiness, good health, and many achievements in the years ahead. 🚀🌈✨<br><br>
+
+            This is not goodbye, it's simply a new beginning. 💖
+
+        </div>
+
+        <div class="signature">
+            With Gratitude,<br>
+            Silpa V S 🌹
+        </div>
+
+    </div>
+
 </div>
 
 <script>
-function showMessage() {
-document.getElementById("message").style.display = "block";
+function showMessage(){
+    document.getElementById("msg").style.display="block";
+}
+
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"%";
+    heart.style.fontSize=(20+Math.random()*20)+"px";
+    heart.style.animationDuration=(4+Math.random()*6)+"s";
+    document.body.appendChild(heart);
 }
 </script>
 
